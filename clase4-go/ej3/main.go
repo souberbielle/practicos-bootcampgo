@@ -7,15 +7,13 @@ import (
 
 var salary int
 
-type customError struct{}
+var (
+	customError = errors.New("Error: el salario es menor a 10.000")
+)
 
-func (e *customError) Error() string {
-	return "Error: el salario es menor a 10.000"
-}
-
-func mySalary(value int) (string, *customError) {
+func mySalary(value int) (string, error) {
 	if value <= 10000 {
-		return "", &customError{}
+		return "", customError
 	} else {
 		return "Debe pagar impuesto", nil
 	}
@@ -23,8 +21,7 @@ func mySalary(value int) (string, *customError) {
 
 func main() {
 	salary, err := mySalary(9000)
-	var errorLowSalary customError
-	if errors.Is(err, &errorLowSalary) {
+	if errors.Is(err, customError) {
 		fmt.Println(err)
 	} else {
 		fmt.Println(salary)
