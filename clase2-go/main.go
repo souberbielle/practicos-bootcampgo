@@ -1,23 +1,20 @@
 package main
 
 import (
-	"fmt"
 	"errors"
+	"fmt"
 )
-
-
 
 func main() {
 	//  EJ 1
 	fmt.Println("El salario sacando impuestos es: ", calcularImpuesto(100000))
 
-
 	// EJ 2
-	result, err := calcularPromedio(-1,2,3,3,3,4)
+	result, err := calcularPromedio(-1, 2, 3, 3, 3, 4)
 	if err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println("El promedio de notas es: ", result) 
+		fmt.Println("El promedio de notas es: ", result)
 	}
 
 	//  EJ 3
@@ -34,10 +31,9 @@ func main() {
 	max := operation(maximum)
 	avg := operation(average)
 
-
-	resultMin, errMin := min(1,3,4,10,12,11,9,9,5,1)
-	resultMax, errMax := max(1,3,4,10,12,11,9,9,5,1)
-	resultAvg, errAvg := avg(1,3,4,10,12,11,9,9,5,1)
+	resultMin, errMin := min(1, 3, 4, 10, 12, 11, 9, 9, 5, 1)
+	resultMax, errMax := max(1, 3, 4, 10, 12, 11, 9, 9, 5, 1)
+	resultAvg, errAvg := avg(1, 3, 4, 10, 12, 11, 9, 9, 5, 1)
 
 	if errAvg != nil {
 		fmt.Println(errAvg)
@@ -84,15 +80,13 @@ func main() {
 		fmt.Println(err3)
 	}
 
-
-
 }
 
 func calcularImpuesto(salario float64) float64 {
 	if salario > 150000 {
-		return salario - salario * 0.27
+		return salario - salario*0.27
 	} else if salario > 50000 {
-		return salario - salario * 0.17
+		return salario - salario*0.17
 	} else {
 		return salario
 	}
@@ -200,6 +194,6 @@ func animal(tipo string) func(cantidad float64) (float64, error) {
 	case cat:
 		return animalCat
 	default:
-		return	animalNotFound
+		return animalNotFound
 	}
 }

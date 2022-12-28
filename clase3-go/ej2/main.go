@@ -5,15 +5,15 @@ import (
 )
 
 type Person struct {
-	ID int
-	Name string
+	ID          int
+	Name        string
 	DateOfBirth string
 }
 
 type Employee struct {
-	Person		Person
-	ID			int
-	Position	string
+	Person   Person
+	ID       int
+	Position string
 }
 
 func (e Employee) PrintEmployee() {
@@ -22,18 +22,17 @@ func (e Employee) PrintEmployee() {
 
 func main() {
 	persona := Person{
-		ID: 1234,
-		Name: "Sebastian",
+		ID:          1234,
+		Name:        "Sebastian",
 		DateOfBirth: "28/06/1999",
 	}
 
 	empleado := Employee{
-		Person: persona,
-		ID: 4321,
+		Person:   persona,
+		ID:       4321,
 		Position: "Software Developer",
 	}
 
 	empleado.PrintEmployee()
-
 
 }

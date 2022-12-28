@@ -1,16 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"errors"
+	"fmt"
 )
 
 type Product struct {
-	ID int
-	Name string
-	Price float64
+	ID          int
+	Name        string
+	Price       float64
 	Description string
-	Category string
+	Category    string
 }
 
 var Products = []Product{
@@ -42,4 +42,6 @@ func main() {
 	prod.Save()
 	prod.GetAll()
 	fmt.Println(getById(3))
-}	
+
+	author := Author{}
+}
